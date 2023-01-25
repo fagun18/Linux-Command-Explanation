@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Linux Command Explanation</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2em;
+  margin-top: 20px;
+}
+
+section {
+  margin: 20px auto;
+  width: 80%;
+  text-align: left;
+}
+
+  </style>
+  <h1 id="command-name"></h1>
+  <section id="syntax"></section>
+  <section id="explanation"></section>
+  <script src="script.js"></script>
+  <script>
+    fetch("https://example.com/api/commands/ls")
+  .then(response => response.json())
+  .then(data => {
+    // Update the HTML with the command information
+    document.querySelector("#command-name").innerHTML = data.name;
+    document.querySelector("#syntax").innerHTML = data.syntax;
+    document.querySelector("#explanation").innerHTML = data.explanation;
+  });
+
+  </script>
+</body>
+</html>
